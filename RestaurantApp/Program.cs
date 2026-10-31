@@ -30,7 +30,9 @@ namespace RestaurantApp
 
             Console.WriteLine($"avg :{average}");
 
-            Console.WriteLine("Mos,Tod,Tae");
+            Console.WriteLine("Mos");
+            Console.WriteLine("Tood");
+            Console.WriteLine("Tae");
         }
 
     
