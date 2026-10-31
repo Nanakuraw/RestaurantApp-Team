@@ -29,7 +29,11 @@ namespace RestaurantApp
             double average = restaurants.Average(item => item.Rate);
 
             Console.WriteLine($"avg :{average}");
+
+            Console.WriteLine("Mos,Tod,Tae");
         }
+
+    
          
     }
 
@@ -47,7 +51,9 @@ namespace RestaurantApp
             this.Rate = rate;
             this.Type = type;
         }
+        
     }
 
+   
    
 }
