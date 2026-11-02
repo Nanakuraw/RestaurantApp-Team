@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace RestaurantApp
 {
@@ -19,20 +20,21 @@ namespace RestaurantApp
              new Restaurant(4, "Sushi Hiro", "Japanese", 4.2),
              new Restaurant(5, "The Pizza Company", "Italian", 4.8)
            };
-            foreach (var item in restaurants)
-           {
-               Console.WriteLine($"{item.Name} Type:{item.Type} -- {item.Rate}");
-              
-           }
-            Console.WriteLine($"จำนวนร้านทั้งหมด:{restaurants.Count}");
+            
+            Console.WriteLine("เพิ่มชื่อร้าน : ");
+            string name = Console.ReadLine();
 
-            double average = restaurants.Average(item => item.Rate);
+            Console.WriteLine("ระบุประเภทร้าน : ");
+            string type = Console.ReadLine();
 
-            Console.WriteLine($"avg :{average}");
+            Console.WriteLine("เพิ่มคะแนนของร้าน : ");
+            string input = Console.ReadLine();
+            double rate = double.Parse(input);
 
-            Console.WriteLine("Mos");
-            Console.WriteLine("Tod");
-            Console.WriteLine("Tae");
+            int nextId = restaurants.Count + 1;
+
+            Restaurant newRestaurant = new Restaurant(nextId, name, type, rate);
+            restaurants.Add(newRestaurant);
         }
 
     
