@@ -35,9 +35,30 @@ namespace RestaurantApp
             Console.WriteLine("Tae");
         }
 
-    
-         
-    }
+            double maxRate = restaurants.Max(r => r.Rate);
+
+            var highestRestaurants = restaurants
+                .Where(r => r.Rate == maxRate);
+
+            Console.WriteLine("\nร้านที่มีคะแนนสูงสุด:");
+
+            foreach (var shop in highestRestaurants)
+            {
+                Console.WriteLine($"[{shop.Id}] {shop.Name} - {shop.Rate}");
+            }
+
+            double minRate = restaurants.Min(r => r.Rate);
+
+            var lowestRestaurants = restaurants
+                .Where(r => r.Rate == minRate);
+
+            Console.WriteLine("\nร้านที่มีคะแนนต่ำสุด:");
+
+            foreach (var shop in lowestRestaurants)
+            {
+                Console.WriteLine($"[{shop.Id}] {shop.Name} - {shop.Rate}");
+            }
+        }
 
     public class Restaurant
     {
